@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     Product.cpp \
+    ProductListWidget.cpp \
     ProductRepository.cpp \
     main.cpp
 
@@ -17,6 +18,7 @@ HEADERS += \
     IProduct.h \
     IProductRepository.h \
     Product.h \
+    ProductListWidget.h \
     ProductRepository.h
 
 FORMS +=
