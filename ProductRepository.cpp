@@ -1,5 +1,7 @@
 #include "ProductRepository.h"
 
+#include "Product.h"
+
 ProductRepository::ProductRepository() {
     db_ = QSqlDatabase::addDatabase("QSQLITE");
     db_.setDatabaseName("products.db");
@@ -43,7 +45,16 @@ void ProductRepository::removeProduct(const QString& name) {
 }
 
 std::vector<std::shared_ptr<IProduct>> ProductRepository::getAllProducts() const {
-    return products_;
+    std::vector<std::shared_ptr<IProduct>> allProducts;
+
+    QSqlQuery query("SELECT name, price FROM products");
+    while (query.next()) {
+        QString name = query.value(0).toString();
+        double price = query.value(1).toDouble();
+        allProducts.push_back(std::make_shared<Product>(name, price));
+    }
+
+    return allProducts;
 }
 
 std::vector<std::shared_ptr<IProduct>> ProductRepository::findProductsByKeyword(const QString& keyword) const {

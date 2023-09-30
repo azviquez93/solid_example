@@ -2,14 +2,14 @@
 #define PRODUCTLISTWIDGET_H
 
 #include <QListWidget>
-#include <vector>
-#include <memory>
-#include "IProduct.h"
+#include <QPushButton>  // Include for QPushButton
+#include "ProductListView.h"
 
-class ProductListWidget : public QListWidget {
+class ProductListWidget : public QListWidget, public ProductListView {
+    Q_OBJECT
 public:
-    ProductListWidget(QWidget* parent = nullptr);
-    void displayProducts(const std::vector<std::shared_ptr<IProduct>>& products);
+    ProductListWidget();
+    void displayProducts(const std::vector<std::shared_ptr<IProduct>>& products) override;
 };
 
 #endif // PRODUCTLISTWIDGET_H

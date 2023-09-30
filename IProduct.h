@@ -1,7 +1,7 @@
 #ifndef IPRODUCT_H
 #define IPRODUCT_H
 
-#include "QtCore/qstring.h"
+#include <QString>
 class IProduct {
 public:
     virtual ~IProduct() = default;
