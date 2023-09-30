@@ -13,7 +13,8 @@ SOURCES += \
 
 HEADERS += \
     IProduct.h \
-    IProductRepository.h
+    IProductRepository.h \
+    Product.h
 
 FORMS +=
 
