@@ -20,6 +20,9 @@ private:
     QLineEdit* nameLineEdit;
     QDoubleSpinBox* priceSpinBox;
     QPushButton* addButton;
+
+    static constexpr double minValue = 0.0;
+    static constexpr double maxValue = 9999999.0;
 };
 
 #endif // ADDPRODUCTDIALOG_H

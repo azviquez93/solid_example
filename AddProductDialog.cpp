@@ -8,6 +8,8 @@ AddProductDialog::AddProductDialog(QWidget* parent)
 
     nameLineEdit = new QLineEdit(this);
     priceSpinBox = new QDoubleSpinBox(this);
+    priceSpinBox->setMinimum(minValue);
+    priceSpinBox->setMaximum(maxValue);
     addButton = new QPushButton("Add", this);
 
     QVBoxLayout* layout = new QVBoxLayout();
