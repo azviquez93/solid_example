@@ -15,12 +15,14 @@ public:
 public slots:
     void handleAddProduct();
     void handleEditProduct();
+    void handleDeleteProduct();
 
 private:
     ProductListController& controller;
     ProductListWidget* listWidget;
     QPushButton* addButton;
     QPushButton* editButton;
+    QPushButton* deleteButton;
 };
 
 #endif // PRODUCTLISTMAINWINDOW_H

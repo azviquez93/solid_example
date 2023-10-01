@@ -11,6 +11,7 @@ public:
     void refreshList();
     void addProduct(const std::shared_ptr<IProduct>&);
     void editProduct(const QString& oldName, const QString& newName, double newPrice);
+    void deleteProduct(const QString& productName);
 
 private:
     IProductRepository* repository_;

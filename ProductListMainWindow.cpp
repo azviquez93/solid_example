@@ -21,11 +21,19 @@ ProductListMainWindow::ProductListMainWindow(ProductListController& ctrl, Produc
     // Connect the "Edit" button's clicked signal to a slot that handles editing a product
     connect(editButton, &QPushButton::clicked, this, &ProductListMainWindow::handleEditProduct);
 
+    // Create a "Delete" button
+    deleteButton = new QPushButton("Delete Product", this);
+
+    // Connect the "Delete" button's clicked signal to a slot that handles product deletion
+    connect(deleteButton, &QPushButton::clicked, this, &ProductListMainWindow::handleDeleteProduct);
+
     // Add the QListWidget, "Add" button, and "Edit" button to the main window's layout
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(listWidget);
     layout->addWidget(addButton);
     layout->addWidget(editButton);
+    layout->addWidget(deleteButton);
+
 
     QWidget* centralWidget = new QWidget(this);
     centralWidget->setLayout(layout);
@@ -100,3 +108,27 @@ void ProductListMainWindow::handleEditProduct() {
         controller.refreshList();
     }
 }
+
+void ProductListMainWindow::handleDeleteProduct() {
+    QListWidgetItem* selectedItem = listWidget->currentItem();
+    if (!selectedItem || !selectedItem->isSelected()) {
+        QMessageBox::information(this, "Delete Product", "Please select a product to delete.");
+        return;
+    }
+
+    QString productName = selectedItem->text().split(" - $")[0];
+
+    // Ask the user for confirmation before deleting
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Delete Product", "Are you sure you want to delete the selected product?",
+                                  QMessageBox::Yes | QMessageBox::No);
+
+    if (reply == QMessageBox::Yes) {
+        // Delete the product from the repository (you need to implement this method in ProductRepository)
+        controller.deleteProduct(productName);
+
+        // Refresh the product list
+        controller.refreshList();
+    }
+}
+

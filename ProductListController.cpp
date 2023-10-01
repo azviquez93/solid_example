@@ -35,3 +35,7 @@ void ProductListController::editProduct(const QString& oldName, const QString& n
     // Refresh the product list
     refreshList();
 }
+
+void ProductListController::deleteProduct(const QString& productName) {
+    repository_->removeProduct(productName);
+}
