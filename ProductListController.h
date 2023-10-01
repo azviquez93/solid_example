@@ -9,6 +9,7 @@ public:
     ProductListController(IProductRepository* repository, ProductListView* view);
     void initialize();
     void refreshList();
+    void addProduct(const std::shared_ptr<IProduct>&);
 
 private:
     IProductRepository* repository_;

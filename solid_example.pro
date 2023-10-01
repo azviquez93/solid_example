@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    AddProductDialog.cpp \
     Product.cpp \
     ProductListController.cpp \
     ProductListMainWindow.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     main.cpp
 
 HEADERS += \
+    AddProductDialog.h \
     IProduct.h \
     IProductRepository.h \
     Product.h \

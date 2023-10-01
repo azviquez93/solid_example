@@ -10,3 +10,7 @@ void ProductListController::initialize() {
 void ProductListController::refreshList() {
     view_->displayProducts(repository_->getAllProducts());
 }
+
+void ProductListController::addProduct(const std::shared_ptr<IProduct>& product) {
+    repository_->addProduct(product);
+}
