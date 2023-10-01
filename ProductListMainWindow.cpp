@@ -15,15 +15,23 @@ ProductListMainWindow::ProductListMainWindow(ProductListController& ctrl, Produc
     // Connect the "Add" button's clicked signal to a slot that handles adding a product
     connect(addButton, &QPushButton::clicked, this, &ProductListMainWindow::handleAddProduct);
 
-    // Add the QListWidget and "Add" button to the main window's layout
+    // Create an "Edit" button
+    editButton = new QPushButton("Edit Product", this);
+
+    // Connect the "Edit" button's clicked signal to a slot that handles editing a product
+    connect(editButton, &QPushButton::clicked, this, &ProductListMainWindow::handleEditProduct);
+
+    // Add the QListWidget, "Add" button, and "Edit" button to the main window's layout
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(listWidget);
     layout->addWidget(addButton);
+    layout->addWidget(editButton);
 
     QWidget* centralWidget = new QWidget(this);
     centralWidget->setLayout(layout);
     setCentralWidget(centralWidget);
 }
+
 
 void ProductListMainWindow::handleAddProduct() {
     // Create an instance of the AddProductDialog

@@ -20,6 +20,7 @@ private:
     ProductListController& controller;
     ProductListWidget* listWidget;
     QPushButton* addButton;
+    QPushButton* editButton;
 };
 
 #endif // PRODUCTLISTMAINWINDOW_H
