@@ -10,6 +10,7 @@ public:
     void initialize();
     void refreshList();
     void addProduct(const std::shared_ptr<IProduct>&);
+    void editProduct(const QString& oldName, const QString& newName, double newPrice);
 
 private:
     IProductRepository* repository_;

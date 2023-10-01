@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     AddProductDialog.cpp \
+    EditProductDialog.cpp \
     Product.cpp \
     ProductListController.cpp \
     ProductListMainWindow.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 
 HEADERS += \
     AddProductDialog.h \
+    EditProductDialog.h \
     IProduct.h \
     IProductRepository.h \
     Product.h \

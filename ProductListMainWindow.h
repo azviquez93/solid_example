@@ -14,6 +14,7 @@ public:
 
 public slots:
     void handleAddProduct();
+    void handleEditProduct();
 
 private:
     ProductListController& controller;

@@ -5,8 +5,10 @@
 class IProduct {
 public:
     virtual ~IProduct() = default;
-    virtual QString name() const = 0;
-    virtual double price() const = 0;
+    virtual QString getName() const = 0;
+    virtual void setName(const QString& newName) = 0;
+    virtual double getPrice() const = 0;
+    virtual void setPrice(double newPrice) = 0;
 };
 
 #endif // IPRODUCT_H

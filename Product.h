@@ -6,8 +6,12 @@
 class Product : public IProduct {
 public:
     Product(const QString& name, double price);
-    QString name() const override;
-    double price() const override;
+
+    // Implement the new getter and setter methods
+    QString getName() const override;
+    void setName(const QString& newName) override;
+    double getPrice() const override;
+    void setPrice(double newPrice) override;
 
 private:
     QString name_;

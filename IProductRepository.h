@@ -8,6 +8,8 @@ public:
     virtual ~IProductRepository() = default;
     virtual void addProduct(const std::shared_ptr<IProduct>& product) = 0;
     virtual void removeProduct(const QString& name) = 0;
+    virtual void updateProduct(const QString& oldName, const QString& newName, double newPrice) = 0;
+    virtual std::shared_ptr<IProduct> getProductByName(const QString& name) const = 0;
     virtual std::vector<std::shared_ptr<IProduct>> getAllProducts() const = 0;
     virtual std::vector<std::shared_ptr<IProduct>> findProductsByKeyword(const QString& keyword) const = 0;
 };
