@@ -12,6 +12,7 @@ SOURCES += \
     AddProductDialog.cpp \
     EditProductDialog.cpp \
     Product.cpp \
+    ProductDialogBase.cpp \
     ProductListController.cpp \
     ProductListMainWindow.cpp \
     ProductListWidget.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     IProduct.h \
     IProductRepository.h \
     Product.h \
+    ProductDialogBase.h \
     ProductListController.h \
     ProductListMainWindow.h \
     ProductListView.h \

@@ -65,7 +65,7 @@ void ProductListMainWindow::handleAddProduct() {
 
 void ProductListMainWindow::handleEditProduct() {
     QListWidgetItem* selectedItem = listWidget->currentItem();
-    if (!selectedItem) {
+    if (!selectedItem || !selectedItem->isSelected()) {
         QMessageBox::information(this, "Edit Product", "Please select a product to edit.");
         return;
     }
